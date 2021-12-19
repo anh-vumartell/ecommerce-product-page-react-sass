@@ -3,8 +3,19 @@
 @import "./helpers/variables";
 
 .app-container {
-  max-width: 100%;
+  width: 100vw;
   height: 100vh;
-  margin: 0 auto;
-  border: 2px solid $black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+main {
+  position: absolute;
+  top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
