@@ -1,0 +1,25 @@
+@import "../helpers/variables";
+
+.slide-arrow__left,
+.slide-arrow__right {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  position: absolute;
+}
+.slide-arrow__left {
+  left: 2rem;
+}
+.slide-arrow__right {
+  right: 2rem;
+}
+.arrow-icon {
+  height: 0.8rem;
+}
