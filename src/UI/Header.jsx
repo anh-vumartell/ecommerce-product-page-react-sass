@@ -3,11 +3,13 @@ import Logo from "../images/logo.svg";
 import CartIcon from "../images/icon-cart.svg";
 import Avatar from "../images/image-avatar.png";
 import "../styles/layouts/_header.scss";
-const Header = () => {
+const Header = ({ onToggle }) => {
   return (
     <div className="header">
       <div className="header-section">
-        <img src={MenuIcon} alt="menu icon" />
+        <button className="btn-menu" onClick={onToggle}>
+          <img src={MenuIcon} alt="menu icon" />
+        </button>
         <img src={Logo} alt="logo" />
       </div>
       <div className="header-section">

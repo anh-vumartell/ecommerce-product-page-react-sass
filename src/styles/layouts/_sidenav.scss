@@ -1,0 +1,31 @@
+@import "../helpers/variables";
+
+/*style the side navigation*/
+.side-nav {
+  height: 100%;
+  width: 70%; /*initial width*/
+  position: fixed;
+  z-index: 1 /*stay on top*/;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  overflow-x: hidden; /*disable horizontal scroll*/
+  padding-top: 2rem;
+  transition: 0.5s; /*slide transition */
+  & a {
+    text-decoration: none;
+    padding: 0.8rem 4rem;
+    font-size: $font-s;
+    font-weight: $font-bold;
+    font-family: $main-font;
+    color: $black;
+    display: block;
+    transition: 0.3s;
+  }
+
+  & a:hover {
+    color: $grayish-blue;
+  }
+}
+
+/*the side navigation links*/
