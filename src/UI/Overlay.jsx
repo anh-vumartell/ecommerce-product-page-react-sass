@@ -1,6 +1,10 @@
 import "../styles/layouts/_overlay.scss";
-const Overlay = (props) => {
-  return <div className="overlay">{props.children}</div>;
+const Overlay = ({ onCloseSideNav, children }) => {
+  return (
+    <div className="overlay" onClick={onCloseSideNav}>
+      {children}
+    </div>
+  );
 };
 
 export default Overlay;

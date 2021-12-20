@@ -12,7 +12,7 @@ const SideNav = () => {
 
   return (
     <>
-      {isToggle === true && <Overlay />}
+      {isToggle === true && <Overlay onCloseSideNav={closeSideNavHandler} />}
       <div id="sideNav" className="side-nav">
         <button onClick={closeSideNavHandler} className="btn-close">
           X

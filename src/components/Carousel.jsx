@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/components/_carousel.scss";
 import ImageSlider from "./ImageSlider";
+
 import Arrow from "../UI/Arrow";
 import nextIcon from "../images/icon-next.svg";
 import prevIcon from "../images/icon-previous.svg";
@@ -33,19 +34,21 @@ const Carousel = () => {
     }
   };
   return (
-    <div className="product-carousel">
-      <Arrow
-        direction="left"
-        clickFunction={prevSlideHandler}
-        icon={prevIcon}
-      />
-      <ImageSlider url={images[imgSlideIndex]} />
-      <Arrow
-        direction="right"
-        clickFunction={nextSliderHandler}
-        icon={nextIcon}
-      />
-    </div>
+    <>
+      <div className="product-carousel">
+        <Arrow
+          direction="left"
+          clickFunction={prevSlideHandler}
+          icon={prevIcon}
+        />
+        <ImageSlider url={images[imgSlideIndex]} />
+        <Arrow
+          direction="right"
+          clickFunction={nextSliderHandler}
+          icon={nextIcon}
+        />
+      </div>
+    </>
   );
 };
 export default Carousel;

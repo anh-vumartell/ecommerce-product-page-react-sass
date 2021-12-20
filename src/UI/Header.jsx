@@ -16,14 +16,16 @@ const Header = () => {
   return (
     <>
       <div className="header">
-        <div className="header-section">
+        <div>
           <button className="btn-menu">
             <img src={MenuIcon} alt="menu icon" onClick={openSideNavHandler} />
           </button>
           <img src={Logo} alt="logo" />
         </div>
-        <div className="header-section">
-          <img src={CartIcon} alt="cart icon" />
+        <div>
+          <button className="btn-cart">
+            <img src={CartIcon} alt="cart icon" />
+          </button>
           <img className="avatar" src={Avatar} alt="avatar" />
         </div>
       </div>

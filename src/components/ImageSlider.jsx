@@ -1,4 +1,5 @@
 import "../styles/components/_imageSlider.scss";
+
 const ImageSlider = ({ url }) => {
   const slideStyle = {
     backgroundImage: `url(${url})`,

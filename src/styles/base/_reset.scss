@@ -9,3 +9,17 @@ body,
 *:after {
   box-sizing: inherit;
 }
+
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

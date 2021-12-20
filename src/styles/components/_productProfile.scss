@@ -7,6 +7,11 @@
 
 .product-intro {
   font-family: $main-font;
+  h1,
+  h2,
+  p {
+    margin-top: 0.8rem;
+  }
   h1 {
     font-size: $font-s - 3px;
     text-transform: uppercase;
