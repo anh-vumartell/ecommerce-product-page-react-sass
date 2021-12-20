@@ -6,6 +6,7 @@ const Cart = () => {
     <div className="cart">
       <div className="cart-header">
         <h3>Cart</h3>
+        <button className="btn-close">x</button>
       </div>
       <div className="cart-summary">
         <img

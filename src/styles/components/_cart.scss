@@ -11,10 +11,21 @@
   font-family: $main-font;
 
   & .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 20%;
     border-bottom: 1px solid $grayish-blue;
     font-weight: $font-bold;
     font-size: $font-s - 2px;
+
+    & .btn-close {
+      background-color: $primary-orange;
+      border-radius: 50%;
+      color: $white;
+      font-family: $main-font;
+      font-weight: $font-bold;
+    }
   }
   & .cart-summary {
     height: 40%;
