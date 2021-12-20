@@ -3,19 +3,20 @@
 /*style the side navigation*/
 .side-nav {
   height: 100%;
-  width: 70%; /*initial width*/
+  width: 0; /*initial width change later with JS*/
   position: fixed;
-  z-index: 1 /*stay on top*/;
+  z-index: 1000 /*stay on top*/;
   top: 0;
   left: 0;
   background-color: $white;
   overflow-x: hidden; /*disable horizontal scroll*/
-  padding-top: 2rem;
-  transition: 0.5s; /*slide transition */
+  padding-top: 4rem;
+  transition: 0.5s ease-in-out; /*slide transition */
+
   & a {
     text-decoration: none;
-    padding: 0.8rem 4rem;
-    font-size: $font-s;
+    padding: 0.8rem 2.5rem;
+    font-size: $font-s - 1px;
     font-weight: $font-bold;
     font-family: $main-font;
     color: $black;
@@ -24,6 +25,20 @@
   }
 
   & a:hover {
+    color: $grayish-blue;
+  }
+
+  & .btn-close {
+    position: absolute;
+    top: 1.3rem;
+    left: 2.3rem;
+    border: none;
+    background-color: transparent;
+    font-weight: $font-bold;
+    font-family: $main-font;
+    cursor: pointer;
+  }
+  .btn-close:hover {
     color: $grayish-blue;
   }
 }

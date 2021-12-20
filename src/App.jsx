@@ -1,25 +1,23 @@
-import React, { useState } from "react";
+import { useToggle } from "./contexts/toggle-context";
 import Carousel from "./components/Carousel";
 import Header from "./UI/Header";
 import "./styles/main.scss";
 import ProductProfile from "./components/ProductProfile";
+import ToggleContextProvider from "./contexts/toggle-context";
 import SideNav from "./UI/SideNav";
 
 function App() {
-  const [isToggle, setIsToggle] = useState(false);
-
-  const toggleHandler = () => {
-    setIsToggle((prevState) => !prevState);
-  };
   return (
-    <div className="app-container">
-      <Header isToggle={isToggle} onToggle={toggleHandler} />
-      {isToggle && <SideNav />}
-      <main>
-        <Carousel />
-        <ProductProfile />
-      </main>
-    </div>
+    <ToggleContextProvider>
+      <div className="app-container" id="app">
+        <Header />
+        <SideNav id="sideNav" />
+        <main id="main">
+          <Carousel />
+          <ProductProfile />
+        </main>
+      </div>
+    </ToggleContextProvider>
   );
 }
 
