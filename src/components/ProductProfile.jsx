@@ -2,7 +2,10 @@ import "../styles/components/_productProfile.scss";
 import cartIcon from "../images/icon-cart.svg";
 import minusIcon from "../images/icon-minus.svg";
 import plusIcon from "../images/icon-plus.svg";
+
+import { useCartCtx } from "../contexts/cart-context";
 const ProductProfile = () => {
+  const { itemsCount, addItem, decreaseItemsCount } = useCartCtx();
   return (
     <section className="profile-container">
       <div className="product-intro">
@@ -21,11 +24,11 @@ const ProductProfile = () => {
       </div>
       <div className="product-action">
         <div className="product-action__modify">
-          <button>
+          <button onClick={decreaseItemsCount}>
             <img src={minusIcon} alt="minus icon" />
           </button>
-          <span>0</span>
-          <button>
+          <span>{itemsCount}</span>
+          <button onClick={addItem}>
             <img src={plusIcon} alt="plus icon" />
           </button>
         </div>

@@ -3,13 +3,15 @@ import MenuIcon from "../images/icon-menu.svg";
 import Logo from "../images/logo.svg";
 import CartIcon from "../images/icon-cart.svg";
 import Avatar from "../images/image-avatar.png";
+//import custom hooks
+import { useCartCtx } from "../contexts/cart-context";
 import { useToggle } from "../contexts/toggle-context";
 
 import "../styles/layouts/_header.scss";
 
 const Header = ({ onOpenCart }) => {
   const { openSideNav, toggleHandler } = useToggle();
-
+  const { itemsCount } = useCartCtx();
   const openSideNavHandler = () => {
     toggleHandler();
     openSideNav();
@@ -26,8 +28,10 @@ const Header = ({ onOpenCart }) => {
         </div>
         <div>
           <button className="btn-cart">
+            <span>{itemsCount}</span>
             <img src={CartIcon} alt="cart icon" onClick={onOpenCart} />
           </button>
+
           <img className="avatar" src={Avatar} alt="avatar" />
         </div>
       </div>

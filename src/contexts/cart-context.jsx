@@ -6,19 +6,31 @@ export const useCartCtx = () => {
 };
 
 const CartContextProvider = (props) => {
-  const [isShown, setIsShown] = useState(false);
+  const [items, setItems] = useState([
+    { id: "item 1", item: "Autumn Limited Edition", price: 125, amount: 3 },
+  ]);
+  const [itemsCount, setItemsCount] = useState(0);
 
-  const openCartHandler = () => {
-    setIsShown(true);
+  const addItem = () => {
+    setItemsCount((prevItemCounts) => prevItemCounts + 1);
   };
 
-  const closeCartHandler = () => {
-    setIsShown(false);
+  const decreaseItemsCount = () => {
+    itemsCount === 0
+      ? setItemsCount(0)
+      : setItemsCount((prevItemCounts) => prevItemCounts - 1);
   };
+
+  const removeItem = (id) => {
+    console.log("remove fnc called");
+    setItems(items.filter((item) => item.id !== id));
+  };
+
   const cartCtxValue = {
-    isShown,
-    openCartHandler,
-    closeCartHandler,
+    itemsCount,
+    addItem,
+    decreaseItemsCount,
+    removeItem,
   };
   return (
     <CartContext.Provider value={cartCtxValue}>

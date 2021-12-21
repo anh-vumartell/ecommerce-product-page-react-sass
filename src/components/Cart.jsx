@@ -1,7 +1,10 @@
 import productOne from "../images/image-product-1.jpg";
 import deleteIcon from "../images/icon-delete.svg";
 import "../styles/components/_cart.scss";
+
+import { useCartCtx } from "../contexts/cart-context";
 const Cart = ({ onCloseCart }) => {
+  const { removeItem } = useCartCtx();
   return (
     <div className="cart">
       <div className="cart-header">
@@ -26,7 +29,7 @@ const Cart = ({ onCloseCart }) => {
             <span className="cart-price__total">$375.00</span>
           </div>
         </div>
-        <button>
+        <button onClick={removeItem}>
           <img src={deleteIcon} alt="delete icon" />
         </button>
       </div>
