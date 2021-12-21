@@ -12,6 +12,10 @@ import "../styles/layouts/_header.scss";
 const Header = ({ onOpenCart }) => {
   const { openSideNav, toggleHandler } = useToggle();
   const { itemsCount } = useCartCtx();
+  // const numberOfCartItems = itemsInCart.reduce((curNumber, item) => {
+  //   return curNumber + item.amount;
+  // }, 0);
+
   const openSideNavHandler = () => {
     toggleHandler();
     openSideNav();

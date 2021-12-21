@@ -27,11 +27,26 @@
       font-weight: $font-bold;
     }
   }
-  & .cart-summary {
-    height: 40%;
+
+  & .cart-summary__content {
+    margin: 1rem 0;
+    gap: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+  }
+  .cart-summary {
+    position: relative;
+    .text-alert {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(200%);
+      color: $grayish-blue;
+      font-size: $font-s - 2px;
+      font-weight: $font-bold;
+    }
   }
 
   & .cart-summary__image {
