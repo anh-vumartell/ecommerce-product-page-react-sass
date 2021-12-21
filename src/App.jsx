@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Carousel from "./components/Carousel";
 import ProductProfile from "./components/ProductProfile";
 import Cart from "./components/Cart";
@@ -9,22 +11,23 @@ import CartContextProvider from "./contexts/cart-context";
 //import styles
 import "./styles/main.scss";
 
-//import custom hooks
-import { useCartCtx } from "./contexts/cart-context";
-import { useState } from "react";
 function App() {
   const [isShown, setIsShown] = useState(false);
 
-  const cartModalHandler = () => {
-    setIsShown((prevState) => !prevState);
+  const openCartHandler = () => {
+    setIsShown(true);
   };
+  const closeCartHandler = () => {
+    setIsShown(false);
+  };
+
   return (
     <ToggleContextProvider>
       <CartContextProvider>
         <div className="app-container" id="app">
-          <Header onOpenCart={cartModalHandler} />
+          <Header onOpenCart={openCartHandler} />
           <SideNav id="sideNav" />
-          {isShown && <Cart />}
+          {isShown && <Cart onCloseCart={closeCartHandler} />}
           <main id="main">
             <Carousel />
             <ProductProfile />

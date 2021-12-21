@@ -94,7 +94,7 @@
     background-color: $primary-orange;
     border-radius: $border-radius;
     cursor: pointer;
-    // box-shadow: -2px 13px 50px $primary-orange;
+    box-shadow: $shadow;
 
     span {
       font-family: $main-font;

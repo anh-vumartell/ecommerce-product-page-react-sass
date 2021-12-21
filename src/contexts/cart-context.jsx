@@ -6,16 +6,19 @@ export const useCartCtx = () => {
 };
 
 const CartContextProvider = (props) => {
-  const [isCartToggled, setIsCartToggled] = useState(false);
-  const cartModalHandler = () => {
-    setIsCartToggled(true);
+  const [isShown, setIsShown] = useState(false);
+
+  const openCartHandler = () => {
+    setIsShown(true);
   };
-  console.log(isCartToggled);
+
+  const closeCartHandler = () => {
+    setIsShown(false);
+  };
   const cartCtxValue = {
-    cartModalHandler,
-    isCartToggled,
-    // openCart,
-    // closeCart,
+    isShown,
+    openCartHandler,
+    closeCartHandler,
   };
   return (
     <CartContext.Provider value={cartCtxValue}>

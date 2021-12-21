@@ -4,12 +4,12 @@ import Logo from "../images/logo.svg";
 import CartIcon from "../images/icon-cart.svg";
 import Avatar from "../images/image-avatar.png";
 import { useToggle } from "../contexts/toggle-context";
-import { useCartCtx } from "../contexts/cart-context";
+
 import "../styles/layouts/_header.scss";
 
 const Header = ({ onOpenCart }) => {
   const { openSideNav, toggleHandler } = useToggle();
-  const { cartModalHandler } = useCartCtx();
+
   const openSideNavHandler = () => {
     toggleHandler();
     openSideNav();

@@ -1,12 +1,14 @@
 import productOne from "../images/image-product-1.jpg";
 import deleteIcon from "../images/icon-delete.svg";
 import "../styles/components/_cart.scss";
-const Cart = () => {
+const Cart = ({ onCloseCart }) => {
   return (
     <div className="cart">
       <div className="cart-header">
         <h3>Cart</h3>
-        <button className="btn-close">x</button>
+        <button className="btn-close" onClick={onCloseCart}>
+          x
+        </button>
       </div>
       <div className="cart-summary">
         <img

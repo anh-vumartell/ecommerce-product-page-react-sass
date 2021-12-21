@@ -68,5 +68,10 @@
     font-weight: $font-bold;
     font-size: $font-s - 2px;
     color: $white;
+    transition: 0.3s linear;
+    box-shadow: $shadow;
+  }
+  .btn-checkout:hover {
+    transform: translateY(10%);
   }
 }
