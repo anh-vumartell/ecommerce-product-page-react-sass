@@ -1,0 +1,49 @@
+@import "../helpers/variables";
+
+.topnav {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  align-items: center;
+}
+.topnav__list {
+  width: 70%;
+  display: none;
+  //   display: flex;
+  //   gap: 2rem;
+  font-family: $main-font;
+  font-size: $font-s - 3px;
+  & a {
+    position: relative;
+    transition: border-bottom 0.3s linear smooth ease-in-out;
+    padding: 1.4rem 0;
+  }
+  //   & a::after {
+  //     content: "";
+  //     border-bottom: 2px solid $primary-orange;
+  //     position: absolute;
+  //     width: 100%;
+  //     height: 100%;
+  //     left: 0.1rem;
+  //     top: 1.5rem;
+  //     display: none;
+  //   }
+  & a:hover {
+    border-bottom: 2px solid $primary-orange;
+    color: $dark-grayish-blue;
+  }
+  & a.active {
+    color: $dark-grayish-blue;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .topnav__list {
+    display: flex;
+    gap: 2rem;
+  }
+  .btn-menu {
+    display: none;
+  }
+}

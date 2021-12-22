@@ -1,7 +1,7 @@
 @import "../helpers/variables";
 .cart {
   position: absolute;
-  top: 4.5rem;
+  top: 7.5rem;
   width: 330px;
   height: 250px;
   background-color: $white;
@@ -20,11 +20,10 @@
     font-size: $font-s - 2px;
 
     & .btn-close {
-      background-color: $primary-orange;
-      border-radius: 50%;
-      color: $white;
+      color: $primary-orange;
       font-family: $main-font;
       font-weight: $font-bold;
+      font-size: $font-s + 2px;
     }
   }
 

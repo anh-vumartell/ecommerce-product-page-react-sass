@@ -6,11 +6,12 @@
   top: 0;
   right: 0;
   width: 100%;
-  height: 8vh;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 1rem 0;
+  // padding: 1rem 0;
+  border-bottom: 2px solid $light-grayish-blue;
   .btn-cart {
     position: relative;
     span {
@@ -25,11 +26,19 @@
       background-color: $primary-orange;
     }
   }
+  .btn-avatar {
+    margin-left: 0.6rem;
+    width: 2em;
+    height: 1.8rem;
+    border: 2px solid $primary-orange;
+    border-radius: 50%;
+  }
+  .avatar {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
   img {
     padding: 0.5rem;
   }
-}
-.avatar {
-  width: 2.3rem;
-  height: 2.3rem;
 }
