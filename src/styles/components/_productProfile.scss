@@ -88,13 +88,16 @@
   }
 
   .product-action__add {
-    border: none;
     height: 3.5rem;
     width: 100%;
     background-color: $primary-orange;
     border-radius: $border-radius;
     cursor: pointer;
     box-shadow: $shadow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 
     span {
       font-family: $main-font;

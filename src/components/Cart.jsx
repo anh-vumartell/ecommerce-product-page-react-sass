@@ -4,9 +4,11 @@ import "../styles/components/_cart.scss";
 
 import { useCartCtx } from "../contexts/cart-context";
 const Cart = ({ onCloseCart }) => {
-  const { removeItem, itemsCount, itemsInCart, setItemsCount } = useCartCtx();
-  console.log(itemsInCart);
-
+  const { removeItem, itemsInCart, setItemsCount } = useCartCtx();
+  // console.log(itemsInCart);
+  const numberOfCartItems = itemsInCart.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
   const removeItemHandler = (id) => {
     removeItem(id);
     setItemsCount(0);
@@ -32,9 +34,9 @@ const Cart = ({ onCloseCart }) => {
                 <div className="cart-price">
                   <span>${item.originalPrice * item.discount}</span>
                   <span>x</span>
-                  <span>{itemsCount}</span>
+                  <span>{numberOfCartItems}</span>
                   <span className="cart-price__total">
-                    ${item.originalPrice * item.discount * itemsCount}
+                    ${item.originalPrice * item.discount * numberOfCartItems}
                   </span>
                 </div>
               </div>

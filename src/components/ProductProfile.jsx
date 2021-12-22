@@ -1,5 +1,5 @@
 import "../styles/components/_productProfile.scss";
-import cartIcon from "../images/icon-cart.svg";
+import CartIcon from "../images/icon-cart.svg";
 import minusIcon from "../images/icon-minus.svg";
 import plusIcon from "../images/icon-plus.svg";
 
@@ -14,7 +14,7 @@ const DUMMY_PRODUCT = {
   amount: 0,
 };
 const ProductProfile = () => {
-  const { increaseItems, decreaseItems, itemsCount, addItem } = useCartCtx();
+  const { itemsCount, decreaseItems, increaseItems, addItem } = useCartCtx();
 
   const addToCartHandler = () => {
     addItem({
@@ -52,7 +52,7 @@ const ProductProfile = () => {
         </div>
 
         <button className="product-action__add" onClick={addToCartHandler}>
-          <img scr={cartIcon} alt="cart icon" />
+          <img src={CartIcon} alt="cart icon" />
           <span>Add to cart</span>
         </button>
       </div>

@@ -6,14 +6,18 @@ import { useCartCtx } from "../contexts/cart-context";
 import "../styles/layouts/_header.scss";
 
 const Header = ({ onOpenCart }) => {
-  const { itemsCount } = useCartCtx();
+  const { itemsInCart } = useCartCtx();
+  const numberOfCartItems = itemsInCart.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
+
   return (
     <>
       <div className="header">
         <TopNav />
         <div>
           <button className="btn-cart">
-            <span>{itemsCount}</span>
+            <span>{numberOfCartItems}</span>
             <img src={CartIcon} alt="cart icon" onClick={onOpenCart} />
           </button>
           <button className="btn-avatar">
