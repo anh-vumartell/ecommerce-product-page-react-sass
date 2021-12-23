@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Carousel from "./components/Carousel";
+import ProductImages from "./components/ProductImages";
 import ProductProfile from "./components/ProductProfile";
 import Cart from "./components/Cart";
 import Header from "./UI/Header";
@@ -10,7 +10,6 @@ import ToggleContextProvider from "./contexts/toggle-context";
 import CartContextProvider from "./contexts/cart-context";
 //import styles
 import "./styles/main.scss";
-import Thumbnails from "./components/Thumbnails";
 
 function App() {
   const [isShown, setIsShown] = useState(false);
@@ -30,8 +29,7 @@ function App() {
           <SideNav id="sideNav" />
           {isShown && <Cart onCloseCart={closeCartHandler} />}
           <main id="main">
-            <Carousel />
-            <Thumbnails />
+            <ProductImages />
             <ProductProfile />
           </main>
         </div>

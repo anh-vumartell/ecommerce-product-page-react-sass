@@ -23,3 +23,10 @@
 .arrow-icon {
   height: 0.8rem;
 }
+
+@media screen and (min-width: 1000px) {
+  .slide-arrow__left,
+  .slide-arrow__right {
+    display: none;
+  }
+}

@@ -22,6 +22,8 @@ const ProductProfile = () => {
       amount: itemsCount,
     });
   };
+  const discountPercent = DUMMY_PRODUCT.discount * 100;
+  const discountedPrice = DUMMY_PRODUCT.originalPrice * DUMMY_PRODUCT.discount;
   return (
     <section className="profile-container">
       <div className="product-intro">
@@ -30,12 +32,9 @@ const ProductProfile = () => {
         <p>{DUMMY_PRODUCT.productDesc}</p>
       </div>
       <div className="product-price">
-        <span className="product-price__discounted">
-          ${DUMMY_PRODUCT.originalPrice * DUMMY_PRODUCT.discount}.00
-        </span>
-        <span className="product-price__percent">
-          {DUMMY_PRODUCT.discount * 100}%
-        </span>
+        <span className="product-price__discounted">${discountedPrice}.00</span>
+        <span className="product-price__percent">{discountPercent}%</span>
+
         <span className="product-price__origin">
           ${DUMMY_PRODUCT.originalPrice}.00
         </span>

@@ -107,3 +107,32 @@
     }
   }
 }
+
+@media screen and (min-width: 1000px) {
+  .profile-container {
+    width: 100%;
+    padding: 2rem 0;
+  }
+  .product-intro {
+    h2 {
+      font-size: $font-s + 14px;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .product-price {
+    font-size: $font-s - 2px;
+  }
+  .product-price__percent {
+    grid-column: 2/4;
+  }
+  .product-action {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    height: 2.6rem;
+
+    .product-action__modify,
+    .product-action__add {
+      height: 100%;
+    }
+  }
+}
