@@ -10,6 +10,7 @@ import ToggleContextProvider from "./contexts/toggle-context";
 import CartContextProvider from "./contexts/cart-context";
 //import styles
 import "./styles/main.scss";
+import Thumbnails from "./components/Thumbnails";
 
 function App() {
   const [isShown, setIsShown] = useState(false);
@@ -30,6 +31,7 @@ function App() {
           {isShown && <Cart onCloseCart={closeCartHandler} />}
           <main id="main">
             <Carousel />
+            <Thumbnails />
             <ProductProfile />
           </main>
         </div>
