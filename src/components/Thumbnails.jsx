@@ -1,4 +1,3 @@
-import { useState } from "react";
 //import styles
 import "../styles/components/_thumbnails.scss";
 import thumbnails from "../dataImg";
@@ -8,6 +7,7 @@ const Thumbnails = (props) => {
   const { setSelectedImg } = useImgSlide();
 
   const handleActiveClass = (e) => {
+    console.log(typeof e.target);
     setSelectedImg(e.target);
     let thumbnailBtns = document.querySelectorAll(".thumbnail");
     thumbnailBtns.forEach((btn) => {
@@ -25,7 +25,10 @@ const Thumbnails = (props) => {
         <button
           key={thumbnail.name}
           className="thumbnail"
-          onClick={(e) => handleActiveClass(e)}
+          onClick={(e) => {
+            handleActiveClass(e);
+            props.onOpenModal();
+          }}
         >
           <img src={thumbnail.urlThumb} alt={`thumnnail-${thumbnail.name}`} />
         </button>

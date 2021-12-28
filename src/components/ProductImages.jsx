@@ -4,12 +4,12 @@ import Thumbnails from "./Thumbnails";
 import ImgSlideContextProvider from "../contexts/imgSlide-context";
 import "../styles/components/_productImages.scss";
 
-const ProductImages = () => {
+const ProductImages = (props) => {
   return (
     <ImgSlideContextProvider>
       <div className="product-images">
         <Carousel />
-        <Thumbnails />
+        <Thumbnails onOpenModal={props.onOpenModal} />
       </div>
     </ImgSlideContextProvider>
   );

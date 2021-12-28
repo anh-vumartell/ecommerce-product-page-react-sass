@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/components/_carousel.scss";
 import ImageSlider from "./ImageSlider";
 import heroImgs from "../dataImg";
@@ -10,33 +10,20 @@ import prevIcon from "../images/icon-previous.svg";
 // import productThree from "../images/image-product-3.jpg";
 // import productFour from "../images/image-product-4.jpg";
 import { useImgSlide } from "../contexts/imgSlide-context";
+import { useEffect } from "react";
 const Carousel = () => {
-  // const images = [
-  //   `${productOne}`,
-  //   `${productTwo}`,
-  //   `${productThree}`,
-  //   `${productFour}`,
-  // ];
-  // const [imgSlideIndex, setImgSlideIndex] = useState(0);
+  const {
+    prevSlideHandler,
+    nextSliderHandler,
+    imgSlideIndex,
+    selectedImg,
+    setSelectedImg,
+  } = useImgSlide();
 
-  // const prevSlideHandler = () => {
-  //   if (imgSlideIndex === 0) {
-  //     setImgSlideIndex(heroImgs.length - 1);
-  //   } else {
-  //     setImgSlideIndex((prevSlideIndex) => prevSlideIndex - 1);
-  //   }
-  // };
-
-  // const nextSliderHandler = () => {
-  //   if (imgSlideIndex === heroImgs.length - 1) {
-  //     setImgSlideIndex(0);
-  //   } else {
-  //     setImgSlideIndex((prevSlideIndex) => prevSlideIndex + 1);
-  //   }
-  // };
-  const { prevSlideHandler, nextSliderHandler, imgSlideIndex, selectedImg } =
-    useImgSlide();
-  console.log(selectedImg);
+  useEffect(() => {
+    console.log(imgSlideIndex);
+    setSelectedImg({ src: heroImgs[imgSlideIndex].url });
+  }, [imgSlideIndex, setSelectedImg]);
   return (
     <>
       <div className="product-carousel">

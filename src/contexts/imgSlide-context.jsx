@@ -8,7 +8,9 @@ export const useImgSlide = () => {
 
 const ImgSlideContextProvider = (props) => {
   const [imgSlideIndex, setImgSlideIndex] = useState(0);
-  const [selectedImg, setSelectedImg] = useState();
+  const [selectedImg, setSelectedImg] = useState({
+    src: heroImgs[imgSlideIndex].url,
+  });
 
   const prevSlideHandler = () => {
     if (imgSlideIndex === 0) {
@@ -16,7 +18,10 @@ const ImgSlideContextProvider = (props) => {
     } else {
       setImgSlideIndex((prevSlideIndex) => prevSlideIndex - 1);
     }
+    // setSelectedImg({ src: heroImgs[imgSlideIndex].url });
   };
+  console.log(imgSlideIndex);
+  console.log(selectedImg);
 
   const nextSliderHandler = () => {
     if (imgSlideIndex === heroImgs.length - 1) {
@@ -24,6 +29,7 @@ const ImgSlideContextProvider = (props) => {
     } else {
       setImgSlideIndex((prevSlideIndex) => prevSlideIndex + 1);
     }
+    // setSelectedImg({ src: heroImgs[imgSlideIndex].url });
   };
 
   const imgSlideCtxValue = {

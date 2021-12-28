@@ -1,8 +1,14 @@
 import "../styles/layouts/_overlay.scss";
-const Overlay = ({ onCloseSideNav, children }) => {
+const Overlay = (props) => {
   return (
-    <div className="overlay" onClick={onCloseSideNav}>
-      {children}
+    <div
+      className="overlay"
+      onClick={() => {
+        props.onCloseSideNav();
+        props.onCloseModal();
+      }}
+    >
+      {props.children}
     </div>
   );
 };
