@@ -12,8 +12,14 @@
   justify-content: space-around;
   // padding: 1rem 0;
   border-bottom: 2px solid $light-grayish-blue;
+
+  .badge-container {
+    display: flex;
+  }
   .btn-cart {
     position: relative;
+    width: 2em;
+    height: 1.8rem;
     span {
       position: absolute;
       width: 1.5rem;
@@ -25,20 +31,41 @@
       border-radius: $border-radius;
       background-color: $primary-orange;
     }
+    img {
+      width: 80%;
+    }
   }
   .btn-avatar {
     margin-left: 0.6rem;
     width: 2em;
     height: 1.8rem;
-    border: 2px solid $primary-orange;
     border-radius: 50%;
+    padding: 0;
+    transition: border 0.35s linear;
+  }
+  .btn-avatar:hover {
+    outline: none;
+    border: 2px solid $primary-orange;
   }
   .avatar {
-    width: 100%;
-    height: 100%;
-    padding: 0;
+    width: 90%;
+    height: 90%;
   }
-  img {
-    padding: 0.5rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .badge-container {
+    width: 8vw;
+    height: 100%;
+    align-items: center;
+    gap: 2rem;
+    .btn-avatar {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+    .avatar {
+      width: 100%;
+      height: 100%;
+    }
   }
 }

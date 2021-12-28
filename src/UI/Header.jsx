@@ -15,9 +15,9 @@ const Header = ({ onOpenCart }) => {
     <>
       <div className="header">
         <TopNav />
-        <div>
+        <div className="badge-container">
           <button className="btn-cart">
-            <span>{numberOfCartItems}</span>
+            {itemsInCart.length > 0 && <span>{numberOfCartItems}</span>}
             <img src={CartIcon} alt="cart icon" onClick={onOpenCart} />
           </button>
           <button className="btn-avatar">
