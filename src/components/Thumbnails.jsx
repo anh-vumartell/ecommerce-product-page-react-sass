@@ -21,18 +21,16 @@ const Thumbnails = (props) => {
   return (
     <section className="thumbnails-container">
       {thumbnails.map((thumbnail) => (
-        // <div className="thumbnail">
-        <button
+        <img
           key={thumbnail.name}
           className="thumbnail"
           onClick={(e) => {
             handleActiveClass(e);
             props.onOpenModal();
           }}
-        >
-          <img src={thumbnail.urlThumb} alt={`thumnnail-${thumbnail.name}`} />
-        </button>
-        // </div>
+          src={thumbnail.urlThumb}
+          alt={`thumnnail-${thumbnail.name}`}
+        />
       ))}
     </section>
   );

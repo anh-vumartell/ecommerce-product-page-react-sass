@@ -12,24 +12,19 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
     .thumbnail {
       cursor: pointer;
       transition: all 0.4s ease-in-out;
       height: 4rem;
       border-radius: $border-radius;
-      img {
-        height: 100%;
-        width: 100%;
-        border-radius: $border-radius;
-      }
+
+      border-radius: $border-radius;
     }
     .thumbnail:hover,
     .thumbnail.selected {
-      border: 2px solid $primary-orange;
-      outline: none;
-      opacity: 0.4;
-      // transform: translateY(-8%);
+      outline: 2px solid $primary-orange;
+      filter: opacity(50%);
     }
   }
 }

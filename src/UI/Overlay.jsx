@@ -5,7 +5,6 @@ const Overlay = (props) => {
       className="overlay"
       onClick={() => {
         props.onCloseSideNav();
-        props.onCloseModal();
       }}
     >
       {props.children}

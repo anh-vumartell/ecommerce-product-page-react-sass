@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+
 import heroImgs from "../dataImg";
 const ImgSlideContext = React.createContext();
 
@@ -20,10 +21,10 @@ const ImgSlideContextProvider = (props) => {
     }
     // setSelectedImg({ src: heroImgs[imgSlideIndex].url });
   };
-  console.log(imgSlideIndex);
+
   console.log(selectedImg);
 
-  const nextSliderHandler = () => {
+  const nextSlideHandler = () => {
     if (imgSlideIndex === heroImgs.length - 1) {
       setImgSlideIndex(0);
     } else {
@@ -33,11 +34,12 @@ const ImgSlideContextProvider = (props) => {
   };
 
   const imgSlideCtxValue = {
+    heroImgs,
     imgSlideIndex,
     selectedImg,
     setSelectedImg,
     prevSlideHandler,
-    nextSliderHandler,
+    nextSlideHandler,
   };
   return (
     <ImgSlideContext.Provider value={imgSlideCtxValue}>

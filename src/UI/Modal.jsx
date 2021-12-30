@@ -1,22 +1,47 @@
-import React, { Fragment } from "react";
-import ReactDOM from "react-dom";
-
-import LightBox from "../components/LightBox";
-import Overlay from "./Overlay";
+import React from "react";
 import "../styles/layouts/_overlay.scss";
-import Thumbnails from "../components/Thumbnails";
+import "../styles/components/_modal.scss";
 
-const portalElement = document.getElementById("backdrop");
+import iconClose from "../images/icon-close.svg";
+import { useImgSlide } from "../contexts/imgSlide-context";
+import nextIcon from "../images/icon-next.svg";
+import prevIcon from "../images/icon-previous.svg";
+
 function Modal(props) {
+  const { heroImgs, imgSlideIndex } = useImgSlide();
+  console.log(heroImgs);
   return (
-    <Fragment>
-      {ReactDOM.createPortal(
-        <Overlay onCloseModal={props.onCloseModal} />,
-        portalElement
-      )}
+    <>
+      <div className="overlay"></div>
+      <div className="modal-lightbox">
+        <button className="btn-close" onClick={props.onCloseModal}>
+          <img src={iconClose} alt="icon close" />
+        </button>
+        <div className="modal-content">
+          <div className="modal-slides">
+            <img
+              className="slide-img"
+              src={heroImgs[imgSlideIndex].url}
+              alt="product"
+            />
+          </div>
+          {/* Next/Prev controls */}
 
-      {ReactDOM.createPortal(<LightBox />, portalElement)}
-    </Fragment>
+          <button className="prev">
+            <img src={prevIcon} alt="prev icon" />
+          </button>
+          <button className="next">
+            <img src={nextIcon} alt="next icon" />
+          </button>
+          {/* Thumbnail image controls */}
+          <div className="thumbnails">
+            {heroImgs.map((img) => (
+              <img className="thumbnail-img" src={img.url} alt={img.name} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 

@@ -14,14 +14,13 @@ import { useEffect } from "react";
 const Carousel = () => {
   const {
     prevSlideHandler,
-    nextSliderHandler,
+    nextSlideHandler,
     imgSlideIndex,
     selectedImg,
     setSelectedImg,
   } = useImgSlide();
 
   useEffect(() => {
-    console.log(imgSlideIndex);
     setSelectedImg({ src: heroImgs[imgSlideIndex].url });
   }, [imgSlideIndex, setSelectedImg]);
   return (
@@ -35,7 +34,7 @@ const Carousel = () => {
         <ImageSlider img={selectedImg} url={heroImgs[imgSlideIndex].url} />
         <Arrow
           direction="right"
-          clickFunction={nextSliderHandler}
+          clickFunction={nextSlideHandler}
           icon={nextIcon}
         />
       </div>
