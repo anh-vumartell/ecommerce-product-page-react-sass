@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# Overview: Ecommerce Product Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Another FrontendMentor's challenge. A well-designed, minimal product page developed in Reactjs. In this challenge I have succeeded create optimal layout for both mobile and large desktop screens.
 
-## Available Scripts
+## What user can expect
 
-In the project directory, you can run:
+Users should be able to:
 
-### `npm start`
+- View the optimal layout for the app depending on their device's screen size
+- See hover states of all interactive elements on the page: menu navigation, cart button, user avatar, action buttons
+- Open & close side menu on mobile screen
+- View product images on a slide when viewport is smaller than 600px
+- View product images on a lightbox when viewport is at least 1000px
+- Increase and decrease number of items
+- Add items to cart
+- Remove items from cart
+- Check cart content
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# My process
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The app was implemented with mobile-first workflow.
 
-### `npm test`
+## Built with
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React v17.0.2
+- Flexbox/Grid
+- Mobile-first workflow
+- SASS - CSS pre-processor
 
-### `npm run build`
+## What I learned
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Reset CSS box model
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Box-model (border-box) is not by default applied to any <div> element (content-box by default)
+- With content-box model, the total width of a <div> is greater than the width we set to <div> (if padding & border are applied)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<aside>
+💡 actual width of a <div> with padding and border: W = 100% + (padding *2) + (border * 2)
 
-### `npm run eject`
+</aside>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- As a result the div spread out the viewport
+- Using “border-box” prevents the above scenario
+- Using universal CSS selector (\*) to apply border-box to every element in the html file
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```css
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Component-based thinking
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Decontruct a component into small components
+- One wrapper (<Carousel/>) for the entire logic and layout
+- An <ImageSlider/> to render images and so we can add background image and animate the background
+- Two <Arrow/> components represent left and right arrows. And via props (direction, clickFunction) we can style them properly
 
-## Learn More
+### Create Sidebar Navigation (with animation)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Step 1: Create the <SideNav/> component
+- Step 2: Inside <SideNav/> component we have:
+  - sidenav as a wrapper
+  - links <a> to each pages (Collections, Men, Women, About, Contact)
+  - a close button
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Use \_reset.scss to reset default style
 
-### Code Splitting
+```css
+html,
+body,
+#root {
+  margin: 0;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/*Reset default padding & margin so customised
+styles can be applied*/
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+/*Reset default setting of all buttons*/
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+a {
+  text-decoration: none;
+  color: $grayish-blue;
+}
+a:active,
+a:visited {
+  color: $grayish-blue;
+}
+```
 
-### Analyzing the Bundle Size
+## Continued development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+I am still working on this project and updating it continuously. Some of the features I am planning to work on:
 
-### Making a Progressive Web App
+- Toggle dark/light mode
+- Drag/drop todo to arrange the list
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Demo
 
-### Advanced Configuration
+[Minimal Todos App](https://minimal-todos.netlify.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Useful resources
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- TypeScript for JavaScript Programmer [https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html] - This help me understand basic types and how to apply TypeScript to this project
