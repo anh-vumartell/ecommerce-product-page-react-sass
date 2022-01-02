@@ -16,6 +16,13 @@ Users should be able to:
 - Remove items from cart
 - Check cart content
 
+## Screenshots
+
+[Mobile mainpage](./src/screenshots/mobile-mainpage.png)
+[Mobile side menu](./src/screenshots/mobile-sidemenu.png)
+[Mobile cart active](./src/screenshots/mobile-cart-active.png)
+[Desktop main page](./src/screenshots/desktop-mainpage.png)
+
 # My process
 
 The app was implemented with mobile-first workflow.
