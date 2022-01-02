@@ -118,15 +118,6 @@ a:visited {
 
 ## Continued development
 
-I am still working on this project and updating it continuously. Some of the features I am planning to work on:
-
-- Toggle dark/light mode
-- Drag/drop todo to arrange the list
-
-## Demo
-
-[Minimal Todos App](https://minimal-todos.netlify.app/)
+I need some help on implementing the LightBox feature and how to pass data from useImgSlide context to the image modal.
 
 ## Useful resources
-
-- TypeScript for JavaScript Programmer [https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html] - This help me understand basic types and how to apply TypeScript to this project
