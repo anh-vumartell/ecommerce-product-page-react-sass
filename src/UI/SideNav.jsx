@@ -17,11 +17,11 @@ const SideNav = () => {
         <button onClick={closeSideNavHandler} className="btn-close">
           X
         </button>
-        <a href="#">Collections</a>
-        <a href="#">Men</a>
-        <a href="#">Women</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#collections">Collections</a>
+        <a href="#men">Men</a>
+        <a href="#women">Women</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </div>
     </>
   );
