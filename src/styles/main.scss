@@ -26,6 +26,7 @@ main {
 
 @media screen and (min-width: 1000px) {
   main {
+    margin-top: 4rem;
     display: grid;
     grid-template-columns: 350px 400px;
     gap: 6rem;

@@ -1,0 +1,32 @@
+@import "../helpers/variables";
+.popup {
+  position: absolute;
+  top: -4rem;
+  right: 2rem;
+  width: 300px;
+  height: 5vh;
+  border: 2px solid $primary-orange;
+  border-radius: $border-radius;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: disappear 2.5s cubic-bezier(1, 0.01, 0.84, 1) forwards,
+    showing 250ms cubic-bezier(1, 0.01, 0.84, 1) forwards;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes showing {
+  0% {
+    top: -10rem;
+  }
+  100% {
+    top: -3rem;
+  }
+}

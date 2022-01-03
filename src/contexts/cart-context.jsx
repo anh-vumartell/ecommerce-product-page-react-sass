@@ -83,6 +83,8 @@ const CartContextProvider = (props) => {
     cartReducer,
     initialCartState
   );
+  const [alert, setAlert] = useState({ type: "", message: "" });
+  const [isPopupShown, setIsPopupShown] = useState(false);
 
   const increaseItemsCount = () => {
     setItemsCount((prevCount) => prevCount + 1);
@@ -93,6 +95,7 @@ const CartContextProvider = (props) => {
   const addItemToCart = (item) => {
     dispatchCartAction({ type: "ADD", item: item });
   };
+
   const removeItemFromCart = (id) => {
     dispatchCartAction({ type: "REMOVE", id: id });
   };
@@ -119,6 +122,10 @@ const CartContextProvider = (props) => {
     itemsInCart: cartState.itemsInCart,
     totalAmount: cartState.totalAmount,
     itemsCount: itemsCount,
+    isPopupShown: isPopupShown,
+    setIsPopupShown,
+    alert: alert,
+    setAlert,
     setItemsCount: setItemsCount,
     addItem: addItemToCart,
     removeItem: removeItemFromCart,

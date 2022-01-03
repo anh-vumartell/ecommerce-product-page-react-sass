@@ -43,9 +43,11 @@ function App() {
             {isModalShown && (
               <Modal isModalShow={isModalShown} onCloseModal={closeModal} />
             )}
+
             <Header onOpenCart={openCartHandler} />
             <SideNav id="sideNav" />
             {isCartShown && <Cart onCloseCart={closeCartHandler} />}
+
             <main id="main">
               <ProductImages onOpenModal={openModal} />
               <ProductProfile />

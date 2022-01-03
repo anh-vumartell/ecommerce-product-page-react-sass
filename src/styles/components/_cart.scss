@@ -9,6 +9,7 @@
   border-radius: $border-radius;
   padding: 1.3rem;
   font-family: $main-font;
+  animation: showingCart 500ms cubic-bezier(1, 0.01, 0.84, 1) forwards;
 
   & .cart-header {
     display: flex;
@@ -95,5 +96,14 @@
     top: 4rem;
     right: 4.3rem;
     box-shadow: $box-shadow;
+  }
+}
+@keyframes showingCart {
+  0% {
+    top: -20%;
+  }
+
+  100% {
+    top: 7.5rem;
   }
 }

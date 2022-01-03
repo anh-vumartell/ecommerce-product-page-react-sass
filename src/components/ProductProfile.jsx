@@ -2,8 +2,10 @@ import "../styles/components/_productProfile.scss";
 import CartIcon from "../images/icon-cart.svg";
 import minusIcon from "../images/icon-minus.svg";
 import plusIcon from "../images/icon-plus.svg";
+import Popup from "../UI/Popup";
 
 import { useCartCtx } from "../contexts/cart-context";
+
 const DUMMY_PRODUCT = {
   id: "product 1",
   productName: "Fall Limited Edition Sneakers",
@@ -14,18 +16,42 @@ const DUMMY_PRODUCT = {
   amount: 0,
 };
 const ProductProfile = () => {
-  const { itemsCount, decreaseItems, increaseItems, addItem } = useCartCtx();
+  const {
+    itemsCount,
+    decreaseItems,
+    increaseItems,
+    addItem,
+    isPopupShown,
+    setAlert,
+    setIsPopupShown,
+  } = useCartCtx();
+
+  const popUpHandler = (type, message) => {
+    setIsPopupShown(true);
+    setAlert({ type: type, message: message });
+    setTimeout(() => {
+      setIsPopupShown(false);
+    }, 5000);
+  };
 
   const addToCartHandler = () => {
-    addItem({
-      ...DUMMY_PRODUCT,
-      amount: itemsCount,
-    });
+    //only add to cart if user increase itemsCount
+    if (itemsCount === 0) {
+      popUpHandler("alert", "Please add more items!");
+      return;
+    } else {
+      addItem({
+        ...DUMMY_PRODUCT,
+        amount: itemsCount,
+      });
+      popUpHandler("success", "Items successfully added!");
+    }
   };
   const discountPercent = DUMMY_PRODUCT.discount * 100;
   const discountedPrice = DUMMY_PRODUCT.originalPrice * DUMMY_PRODUCT.discount;
   return (
     <section className="profile-container">
+      {isPopupShown && <Popup />}
       <div className="product-intro">
         <h1>Sneaker Company</h1>
         <h2>{DUMMY_PRODUCT.productName}</h2>

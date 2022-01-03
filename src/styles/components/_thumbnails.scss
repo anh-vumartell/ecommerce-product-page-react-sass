@@ -18,12 +18,11 @@
       transition: all 0.4s ease-in-out;
       height: 4rem;
       border-radius: $border-radius;
-
-      border-radius: $border-radius;
+      outline: none;
     }
     .thumbnail:hover,
     .thumbnail.selected {
-      outline: 2px solid $primary-orange;
+      border: 2px solid $primary-orange;
       filter: opacity(50%);
     }
   }
