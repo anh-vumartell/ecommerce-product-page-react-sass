@@ -2,6 +2,10 @@
 
 Another FrontendMentor's challenge. A well-designed, minimal product page developed in Reactjs. In this challenge I have succeeded create optimal layout for both mobile and large desktop screens.
 
+## Demo
+
+[Love Sneakers] (https://love-sneaker.netlify.app/)
+
 ## What user can expect
 
 Users should be able to:
