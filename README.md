@@ -1,6 +1,6 @@
 # Overview: Ecommerce Product Page
 
-Another FrontendMentor's challenge. A well-designed, minimal product page developed in Reactjs. In this challenge I have succeeded create optimal layout for both mobile and large desktop screens.
+Another FrontendMentor's challenge. A well-designed, minimal product page developed in Reactjs. In this challenge I have succeeded in creating optimal layout for both mobile and large desktop screens.
 
 ## Demo
 
@@ -127,8 +127,37 @@ a:visited {
 }
 ```
 
+### Change color of SVG icon
+
+I was struggling with changing color of cart icon in "Add to cart"-button. I was seeking help in FrontendMentor community and there was a kind one who gave me a hint of CSS "fill" property. I took a look at it by refering to W3docs website and Stackoverflow. I found another good solution to this issue. Check "Useful resources" section to read more.
+
+Honestly this is not a very straight-forward solution but it works in my case.
+
+```html
+<button className="product-action__add" onClick="{addToCartHandler}">
+  <img className="cart-icon" src="{CartIcon}" alt="cart icon" />
+  <span>Add to cart</span>
+</button>
+```
+
+I use <img> tag to add cart icon and give it a class name "cart-icon". I use CSS filter property to apply visual effect of the cart image. I also use [CSS filter generator to convert from a regular hex color to a filter one] (Check "Useful resources" for more information).
+
+```css
+.cart-icon {
+  filter: invert(100%) sepia(200%) saturate(0%) hue-rotate(263deg) brightness(
+      100%
+    ) contrast(300%);
+}
+```
+
+I was experimenting with different filter values to find the expected white color to my svg icon. I got grayish filtered color from the CSS filter generator so I had to increase sepia(from 0% to 200%) contrast (from 102% to 300%) and decrease brightness (from 101% to 100%). As a result, I got an expected white color to my cart icon.
+
 ## Continued development
 
 I need some help on implementing the LightBox feature and how to pass data from useImgSlide context to the image modal.
 
 ## Useful resources
+
+- [Change color of any SVG icon](https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element/53336754#53336754)
+- [CSS filter Property](https://www.w3docs.com/learn-css/filter.html)
+- [CSS filter generator](https://codepen.io/sosuke/pen/Pjoqqp)

@@ -77,7 +77,7 @@ const ProductProfile = () => {
         </div>
 
         <button className="product-action__add" onClick={addToCartHandler}>
-          <img src={CartIcon} alt="cart icon" />
+          <img className="cart-icon" src={CartIcon} alt="cart icon" />
           <span>Add to cart</span>
         </button>
       </div>

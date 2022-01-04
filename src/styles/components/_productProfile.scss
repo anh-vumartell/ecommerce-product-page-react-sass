@@ -99,6 +99,10 @@
     align-items: center;
     gap: 0.5rem;
 
+    .cart-icon {
+      filter: invert(100%) sepia(200%) saturate(0%) hue-rotate(263deg)
+        brightness(100%) contrast(300%);
+    }
     span {
       font-family: $main-font;
       font-weight: $font-bold + 100;
